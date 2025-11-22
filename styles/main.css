@@ -265,7 +265,7 @@ svg * {
   --font-family-accent: "Kumbh Sans", "sans-serif";
   --container-width: 100rem;
   --container-padding-x: 1rem;
-  --transition-duration: .2s;
+  --transition-duration: 0.2s;
 }
 @media (width <= 90.06125rem) {
   :root {
@@ -393,6 +393,45 @@ a[class] {
   text-decoration: 0s !important;
 }
 
+.button {
+  display: inline-flex;
+  justify-content: center;
+  padding: 1.125rem 1.5rem;
+  font-size: 1.125rem;
+  color: var(--color-grey-60);
+  background-color: var(--color-dark);
+  white-space: nowrap;
+  border: var(--border);
+  border-radius: 0.75rem;
+}
+@media (width <= 90.06125rem) {
+  .button {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+  }
+}
+@media (any-hover: hover) {
+  .button:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    background-color: var(--color-dark-10);
+  }
+}
+@media (any-hover: none) {
+  .button:active {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    background-color: var(--color-dark-10);
+  }
+}
+.button--accent {
+  font-weight: 500;
+  border-radius: 0.625rem;
+  color: var(--color-dark);
+  background-color: var(--color-accent);
+}
+
 .header__promo {
   padding-block: 1.5rem;
   border-bottom: var(--border);
@@ -430,13 +469,6 @@ a[class] {
   border-radius: 0.625rem;
   pointer-events: none;
 }
-.header__contact-us-link {
-  padding: 0.875rem 1.25rem;
-  color: var(--color-dark);
-  border-radius: 0.625rem;
-  font-weight: 500;
-  background-color: var(--color-accent);
-}
 
 .icon {
   display: inline-flex;
@@ -446,7 +478,7 @@ a[class] {
 .icon::after {
   --size: 1.5rem;
   width: var(--size);
-  aspect-ratio: 1;
+  height: var(--size);
   content: "";
   flex-shrink: 0;
   background-position: center;
