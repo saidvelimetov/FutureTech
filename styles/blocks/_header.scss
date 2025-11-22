@@ -2,9 +2,12 @@
 
 .header {
   &__promo{
-    padding-block: rem(24);
+    padding-block: rem(20);
     border-bottom: var(--border);
     text-align: center;
+    @include mobile {
+      padding-block: rem(14);
+    }
   }
 
   &__body {
@@ -23,6 +26,14 @@
     @include mobile-above {
       display: contents;
     }
+
+    @include mobile {
+      &:not(.is-active) {
+        @include hide {
+          translate: 100%;
+        }
+      }
+    }
   }
 
   &__menu {
@@ -30,12 +41,18 @@
       display: flex;
       align-items: center;
       column-gap: rem(16);
+    
+      @include laptop {
+        column-gap: rem(6);
+      }
     }
-
     &-link{
       padding: rem(14) rem(24);
       color: var(--color-grey-50);
+      @include laptop {
+        padding: rem(10) rem(18);
 
+      }
       &.is-active {
         background-color: var(--color-dark);
         font-weight: 500;

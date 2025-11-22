@@ -92,3 +92,15 @@ a {
   outline-offset: rem(4);
   text-decoration: 0s !important;
 }
+
+a,
+button {
+  &[aria-label] {
+    &::before {
+      @include abs-center;
+      @include square(rem(44));
+      
+      content: '';
+    }
+  }
+}
